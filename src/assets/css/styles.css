@@ -1,0 +1,110 @@
+:root {
+  --fundo-principal: #a8c7fa;
+  --fundo-card: #F8F9FA; 
+  --texto: #202124;
+  --texto-inverso: #fff;
+  --fundo-principal-inverso: #202124;
+  --destaque-secundario: #673AB7;
+
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+div#root{
+  background-color: var(--fundo-principal);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+header {
+  height: 100px;
+}
+
+main.container {
+  flex: 1;
+  min-height: 400px;
+  width: 500px;
+  margin: 150px auto;
+  margin-top: 30px;
+  background-color: var(--fundo-card);
+  border-radius: 8px;
+  box-shadow: 
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+input {
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  width: 85%;
+  margin: 13px 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: #eee;
+  transition: 0.2s;
+}
+
+input:focus,
+input:not(:placeholder-shown){
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--texto);
+}
+
+input:focus {
+  border-color: #a8c7fa;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+button.btnSubmit {
+  background-color: #202124;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  margin-left: 15px;
+  padding: 11px 0;
+  border-radius: 5px;
+  font-size: .975rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
+}
+
+button.btnSubmit:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+button.btnSubmit:focus-visible {
+  outline: 3px solid rgba(0, 123, 255, 0.5); 
+  outline-offset: 2px;
+}
+
+button.btnSubmit:active {
+  transform: translateY(1px); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+div.task-box{
+  background-color: var(--fundo-card);
+  border-radius: 8px;
+}
+
+
