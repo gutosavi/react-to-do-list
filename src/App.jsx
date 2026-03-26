@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import ToDoList from './components/ToDoList';
 
 function App() {
   const [text, setText] = React.useState('');
   const [tasks, setTasks] = React.useState([]);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ function App() {
         done: false,
       },
     ]);
-    console.log(tasks);
+    setIsVisible(true);
   };
 
   const handleChange = ({ target }) => {
@@ -37,11 +39,7 @@ function App() {
             />
             <button className="btnSubmit">Enviar</button>
           </form>
-          <ul>
-            {tasks.map((item) => (
-              <li key={item.id}>{item.text}</li>
-            ))}
-          </ul>
+          {isVisible && <ToDoList tasks={tasks} />}
         </div>
       </main>
     </>

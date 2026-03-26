@@ -20,7 +20,6 @@ div#root{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   text-align: center;
 }
 
@@ -29,8 +28,7 @@ header {
 }
 
 main.container {
-  flex: 1;
-  min-height: 400px;
+  min-height: 150px;
   width: 500px;
   margin: 150px auto;
   margin-top: 30px;
@@ -48,7 +46,7 @@ input {
   font-size: 1.2rem;
   border: 1px solid #ccc;
   width: 85%;
-  margin: 13px 0;
+  margin: 20px 0;
   padding: 0.8rem;
   border-radius: 8px;
   background: #eee;
@@ -104,6 +102,33 @@ button.btnSubmit:active {
 div.task-box{
   background-color: var(--fundo-card);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+div.todo-list li {
+  background-color: #eee;
+  height: 60px;
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px;
+  text-align: start;
+  border-radius: 8px;
+  box-shadow: 
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+
 }
 
 
