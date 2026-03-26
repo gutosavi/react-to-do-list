@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImCheckboxChecked } from 'react-icons/im';
+import ToDoItem from './ToDoItem';
 
 const ToDoList = ({ tasks, setTasks }) => {
   const handleClick = (id) => {
@@ -15,9 +15,13 @@ const ToDoList = ({ tasks, setTasks }) => {
     <div className="todo-list">
       <ul>
         {tasks.map((item) => (
-          <li onClick={() => handleClick(item.id)} key={item.id}>
-            {item.text} {item.done && <ImCheckboxChecked />}
-          </li>
+          <ToDoItem
+            key={item.id}
+            id={item.id}
+            text={item.text}
+            done={item.done}
+            onToggle={handleClick}
+          />
         ))}
       </ul>
     </div>

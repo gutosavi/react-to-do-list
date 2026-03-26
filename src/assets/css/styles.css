@@ -28,7 +28,7 @@ header {
 }
 
 main.container {
-  min-height: 150px;
+  min-height: 100px;
   width: 500px;
   margin: 150px auto;
   margin-top: 30px;
@@ -41,23 +41,26 @@ main.container {
     0 8px 8px hsl(0deg 0% 0% / 0.075),
     0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
-
-input {
+.input-container{
+  margin-bottom: -48px;
+}
+.input-container input {
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  height: 80px;
   width: 85%;
   margin: 20px 0;
   padding: 0.8rem;
   border-radius: 8px;
   background: #eee;
   transition: 0.2s;
+  position: relative;
+  display: inline-block;
 }
 
 input:focus,
 input:not(:placeholder-shown){
-  top: -10px;
-  left: 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--texto);
 }
 
@@ -66,11 +69,15 @@ input:focus {
   box-shadow: 0 0 5px rgba(0,123,255,0.3);
 }
 
-button.btnSubmit {
+.input-container .btnSubmit {
+  position: absolute;
+  right: -145px;
+  top: 50%;
+  transform: translateY(-167%);
   background-color: #202124;
   color: #fff;
-  width: 150px;
-  height: 40px;
+  width: 80px;
+  height: 50px;
   margin-left: 15px;
   padding: 11px 0;
   border-radius: 5px;
@@ -79,14 +86,14 @@ button.btnSubmit {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease-in-out; 
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 button.btnSubmit:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 button.btnSubmit:focus-visible {
@@ -94,8 +101,9 @@ button.btnSubmit:focus-visible {
   outline-offset: 2px;
 }
 
-button.btnSubmit:active {
-  transform: translateY(1px); 
+.input-container .btnSubmit:active {
+  background-color: #4f4f4f;
+  transform: translateY(1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -104,7 +112,6 @@ div.task-box{
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 ul {
@@ -113,15 +120,16 @@ ul {
 
 div.todo-list li {
   background-color: #eee;
-  height: 60px;
+  height: 80px;
   width: 80%;
-  margin: 20px auto;
+  margin: 15px auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 14px;
   text-align: start;
   border-radius: 8px;
+  cursor: pointer;
   box-shadow: 
     0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -130,5 +138,3 @@ div.todo-list li {
     0 16px 16px hsl(0deg 0% 0% / 0.075);
 
 }
-
-
