@@ -18,6 +18,7 @@ function App() {
       },
     ]);
     setIsVisible(true);
+    console.log(tasks);
   };
 
   const handleChange = ({ target }) => {
@@ -39,7 +40,7 @@ function App() {
             />
             <button className="btnSubmit">Enviar</button>
           </form>
-          {isVisible && <ToDoList tasks={tasks} />}
+          {isVisible && <ToDoList tasks={tasks} setTasks={setTasks} />}
         </div>
       </main>
     </>
