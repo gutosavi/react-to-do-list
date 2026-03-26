@@ -2,19 +2,42 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  const [text, setText] = React.useState('');
+  const [tasks, setTasks] = React.useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      {
+        id: crypto.randomUUID(),
+        text: text,
+        done: false,
+      },
+    ]);
+    console.log(tasks);
+  };
+
+  const handleChange = ({ target }) => {
+    setText(target.value);
+  };
+
   return (
     <>
-      <header>...</header>
+      <header>TO DO LIST</header>
       <main className="container">
         <div className="task-box">
-          <div>
-            <input type="text" id="task" placeholder="Write your task here" />
-          </div>
-          <button className="btnSubmit">Enviar</button>
-          <ul>
-            <li>Tarefa 1</li>
-            <li>Tarefa 2</li>
-          </ul>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              id="task"
+              placeholder="Write your task here"
+              value={text}
+              onChange={handleChange}
+            />
+            <button className="btnSubmit">Enviar</button>
+          </form>
+          <ul></ul>
         </div>
       </main>
     </>
