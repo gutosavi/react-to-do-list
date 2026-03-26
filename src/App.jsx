@@ -37,7 +37,11 @@ function App() {
             />
             <button className="btnSubmit">Enviar</button>
           </form>
-          <ul></ul>
+          <ul>
+            {tasks.map((item) => (
+              <li key={item.id}>{item.text}</li>
+            ))}
+          </ul>
         </div>
       </main>
     </>
