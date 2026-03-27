@@ -4,8 +4,10 @@ import ToDoList from './components/ToDoList';
 import ToDoInput from './components/ToDoInput';
 import ThemeToggleButton from './components/Theme/ThemeToggleButton';
 import WeatherApi from './components/Api/WeatherApi';
+import UserLocation from './components/UserLocation';
 
 function App() {
+  const [coords, setCoords] = React.useState(null);
   const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem('task')) || [],
   );
@@ -42,7 +44,8 @@ function App() {
     <>
       <header>
         <ThemeToggleButton />
-        <WeatherApi />
+        <UserLocation onLocation={setCoords} />
+        <WeatherApi coords={coords} />
       </header>
       <main className="container">
         <ToDoInput

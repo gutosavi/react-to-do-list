@@ -1,68 +1,64 @@
 import React from 'react';
 import './WeatherApi.css';
 
-const WeatherApi = () => {
+const WeatherApi = ({ coords }) => {
   const [weather, setWeather] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  const apiKey = '8a60b2de14f7a17c7a11706b2cfcd87c';
-  const cityName = 'São Paulo';
-
-  const fetchApi = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`,
-      );
-      const json = await response.json();
-      console.log(json.weather[0].description);
-
-      setWeather({
-        city: json.name,
-        country: json.sys.country,
-        temp: json.main.temp,
-        icon: json.weather[0].icon,
-        description: json.weather[0].description,
-      });
-      setLoading(false);
-    } catch (error) {
-      console.error('ERRO', error);
-      setLoading(false);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const apiKey = '90f8ff726e7c453ceb7cce782a4310ca';
 
   React.useEffect(() => {
-    fetchApi();
-  }, []);
+    if (!coords) return;
 
-  /* 
-  {weather.main.temp}
-  {weather.weather[0].icon} 
-      */
+    const fetchApi = async () => {
+      try {
+        setLoading(true);
+
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${apiKey}&units=metric&lang=pt_br`,
+        );
+
+        const json = await response.json();
+
+        setWeather({
+          city: json.name,
+          country: json.sys.country,
+          temp: json.main.temp,
+          icon: json.weather[0].icon,
+          description: json.weather[0].description,
+        });
+      } catch (error) {
+        console.error('ERRO', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchApi();
+  }, [coords]);
+
+  if (!coords) return <p>Obtendo localização...</p>;
+  if (loading) return <p>Carregando clima...</p>;
+  if (!weather) return null;
 
   return (
     <>
-      {weather && (
-        <div className="weather-container">
-          <div className="weather-temp">
-            {loading && <p>Carregando...</p>}
-            <p>{weather.city} </p>
-            <p>
-              {weather.temp.toFixed(1).toString().replace('.', ',')}
-              <sup>C°</sup>
-            </p>
-          </div>
-          <div className="temp-description">
-            <img
-              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-              alt=""
-            />
-            <p>{weather.description}</p>
-          </div>
+      <div className="weather-container">
+        <div className="weather-temp">
+          <p>{weather.city} </p>
+          <p>
+            {weather.temp.toFixed(1).toString().replace('.', ',')}
+            <sup>C°</sup>
+          </p>
         </div>
-      )}
+        <div className="temp-description">
+          <img
+            src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+            alt=""
+          />
+          <p>{weather.description}</p>
+        </div>
+      </div>
     </>
   );
 };
