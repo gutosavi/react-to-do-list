@@ -41,7 +41,12 @@ div#root{
 }
 
 header {
-  height: 100px;
+  height: 250px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 20px;
 }
 
 main.container {

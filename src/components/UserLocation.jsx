@@ -28,7 +28,7 @@ const UserLocation = ({ onLocation }) => {
 
   if (error) return <p>{error}</p>;
 
-  return <p>{error}</p>;
+  return <></>;
 };
 
 export default UserLocation;
