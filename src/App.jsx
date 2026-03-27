@@ -3,6 +3,7 @@ import './App.css';
 import ToDoList from './components/ToDoList';
 import ToDoInput from './components/ToDoInput';
 import ThemeToggleButton from './components/Theme/ThemeToggleButton';
+import WeatherApi from './components/Api/WeatherApi';
 
 function App() {
   const [tasks, setTasks] = React.useState(
@@ -40,9 +41,8 @@ function App() {
   return (
     <>
       <header>
-        <nav>
-          <ThemeToggleButton />
-        </nav>
+        <ThemeToggleButton />
+        <WeatherApi />
       </header>
       <main className="container">
         <ToDoInput
