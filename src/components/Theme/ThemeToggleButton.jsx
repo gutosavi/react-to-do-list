@@ -16,12 +16,16 @@ const ThemeToggleButton = () => {
   };
 
   return (
-    <nav>
-      <button onClick={toggleTheme} aria-label="Toggle theme">
+    <nav className="dark-mode-container">
+      <button
+        className="toggleBtn"
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+      >
         {theme ? (
-          <MdDarkMode color="black" size="1.5em" />
-        ) : (
           <CgSun color="white" size="1.5em" />
+        ) : (
+          <MdDarkMode color="black" size="1.5em" />
         )}
       </button>
     </nav>

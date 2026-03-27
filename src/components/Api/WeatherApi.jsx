@@ -13,10 +13,13 @@ const WeatherApi = () => {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`,
       );
-
       const json = await response.json();
-      setWeather(json);
-      console.log(json.name);
+      setWeather({
+        city: json.name,
+        country: json.sys.country,
+        temp: json.main.temp,
+        icon: json.weather[0].icon,
+      });
       setLoading(false);
     } catch (error) {
       console.error('ERRO', error);
@@ -30,12 +33,15 @@ const WeatherApi = () => {
     fetchApi();
   }, []);
 
+  /* 
+  {weather.main.temp}
+  {weather.weather[0].icon} 
+      */
+
   return (
     <div>
       {loading && <p>Carregando...</p>}
-      {weather.name}
-      {weather.main.temp}
-      {weather.weather[0].icon}
+      {weather.city} {weather.temp + 'C°'}
     </div>
   );
 };

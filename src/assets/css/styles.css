@@ -7,6 +7,18 @@
   --destaque: #ccc;
   --destaque-secundario: #eee;
   --trash: rgb(220, 76, 100);
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  transition: all var(--transition-speed) ease;
 }
 
 body.dark{
@@ -18,13 +30,6 @@ body.dark{
   --destaque: #444444;
   --destaque-secundario: #202124;
   --trash: #eee;
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
 }
 
 div#root{
