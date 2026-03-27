@@ -1,23 +1,6 @@
 import React from 'react';
 
-const ToDoInput = ({ text, setText, setTasks, setIsVisible }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTasks((prevTasks) => [
-      ...prevTasks,
-      {
-        id: crypto.randomUUID(),
-        text: text,
-        done: false,
-      },
-    ]);
-    setIsVisible(true);
-  };
-
-  const handleChange = ({ target }) => {
-    setText(target.value);
-  };
-
+const ToDoInput = ({ text, handleChange, handleSubmit }) => {
   return (
     <div className="task-box">
       <form onSubmit={handleSubmit}>

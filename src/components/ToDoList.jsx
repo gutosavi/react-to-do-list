@@ -20,6 +20,7 @@ const ToDoList = ({ tasks, setTasks }) => {
             id={item.id}
             text={item.text}
             done={item.done}
+            setTasks={setTasks}
             onToggle={handleClick}
           />
         ))}

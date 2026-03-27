@@ -5,7 +5,6 @@
   --texto-inverso: #fff;
   --fundo-principal-inverso: #202124;
   --destaque-secundario: #673AB7;
-
 }
 
 * {
@@ -119,14 +118,15 @@ ul {
 }
 
 div.todo-list li {
+  position: relative;
   background-color: #eee;
   height: 80px;
-  width: 80%;
+  width: 85%;
   margin: 15px auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 14px;
+  padding: 50px;
   text-align: start;
   border-radius: 8px;
   cursor: pointer;
@@ -137,4 +137,19 @@ div.todo-list li {
     0 8px 8px hsl(0deg 0% 0% / 0.075),
     0 16px 16px hsl(0deg 0% 0% / 0.075);
 
+}
+
+i.checkbox {
+  position: absolute;
+  right: 390px;
+  top: 41%;
+  color: #ccc;
+}
+
+i.trash{
+  position: absolute;
+  right: -26px;
+  top: -7%;
+  padding: 50px;
+  color: rgb(220, 76, 100)
 }
