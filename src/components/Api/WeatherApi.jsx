@@ -1,4 +1,5 @@
 import React from 'react';
+import './WeatherApi.css';
 
 const WeatherApi = () => {
   const [weather, setWeather] = React.useState([]);
@@ -14,11 +15,14 @@ const WeatherApi = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`,
       );
       const json = await response.json();
+      console.log(json);
+
       setWeather({
         city: json.name,
         country: json.sys.country,
         temp: json.main.temp,
         icon: json.weather[0].icon,
+        description: json.weather[0].description,
       });
       setLoading(false);
     } catch (error) {
@@ -39,9 +43,18 @@ const WeatherApi = () => {
       */
 
   return (
-    <div>
-      {loading && <p>Carregando...</p>}
-      {weather.city} {weather.temp + 'C°'}
+    <div className="weather-container">
+      <div className="weather-temp">
+        {loading && <p>Carregando...</p>}
+        {weather.city} {weather.temp.toFixed(1).toString().replace('.', ',')}
+        <sup>C°</sup>
+      </div>
+      <div>
+        <img
+          src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+          alt=""
+        />
+      </div>
     </div>
   );
 };
