@@ -3,8 +3,21 @@
   --fundo-card: #F8F9FA; 
   --texto: #202124;
   --texto-inverso: #fff;
-  --fundo-principal-inverso: #202124;
-  --destaque-secundario: #673AB7;
+  --fundo-buttons-inverso: #202124;
+  --destaque: #ccc;
+  --destaque-secundario: #eee;
+  --trash: rgb(220, 76, 100);
+}
+
+body.dark{
+  --fundo-principal: #202124;
+  --fundo-card: #444444;
+  --fundo-buttons-inverso: #eee;
+  --texto: #eee;;
+  --texto-inverso: #202124;
+  --destaque: #444444;
+  --destaque-secundario: #202124;
+  --trash: #eee;
 }
 
 * {
@@ -45,13 +58,13 @@ main.container {
 }
 .input-container input {
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--destaque);
   height: 80px;
   width: 85%;
   margin: 20px 0;
   padding: 0.8rem;
   border-radius: 8px;
-  background: #eee;
+  background: var(--destaque-secundario);
   transition: 0.2s;
   position: relative;
   display: inline-block;
@@ -64,7 +77,7 @@ input:not(:placeholder-shown){
 }
 
 input:focus {
-  border-color: #a8c7fa;
+  border-color: var(--fundo-principal);
   box-shadow: 0 0 5px rgba(0,123,255,0.3);
 }
 
@@ -73,8 +86,8 @@ input:focus {
   right: -145px;
   top: 50%;
   transform: translateY(-167%);
-  background-color: #202124;
-  color: #fff;
+  background-color: var(--fundo-buttons-inverso);
+  color: var(--texto-inverso);
   width: 80px;
   height: 50px;
   margin-left: 15px;
@@ -119,7 +132,8 @@ ul {
 
 div.todo-list li {
   position: relative;
-  background-color: #eee;
+  background-color: var(--destaque-secundario);
+  color: var(--texto);
   height: 80px;
   width: 85%;
   margin: 15px auto;
@@ -143,7 +157,7 @@ i.checkbox {
   position: absolute;
   right: 390px;
   top: 41%;
-  color: #ccc;
+  color: var(--destaque);
 }
 
 i.trash{
@@ -151,5 +165,5 @@ i.trash{
   right: -26px;
   top: -7%;
   padding: 50px;
-  color: rgb(220, 76, 100)
+  color: var(--trash);
 }

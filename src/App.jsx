@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ToDoList from './components/ToDoList';
 import ToDoInput from './components/ToDoInput';
+import ThemeToggleButton from './components/Theme/ThemeToggleButton';
 
 function App() {
   const [tasks, setTasks] = React.useState(
@@ -38,7 +39,11 @@ function App() {
 
   return (
     <>
-      <header>TO DO LIST</header>
+      <header>
+        <nav>
+          <ThemeToggleButton />
+        </nav>
+      </header>
       <main className="container">
         <ToDoInput
           text={text}
