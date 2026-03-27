@@ -2,7 +2,7 @@ import React from 'react';
 import './WeatherApi.css';
 
 const WeatherApi = () => {
-  const [weather, setWeather] = React.useState([]);
+  const [weather, setWeather] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
   const apiKey = '8a60b2de14f7a17c7a11706b2cfcd87c';
@@ -15,7 +15,7 @@ const WeatherApi = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`,
       );
       const json = await response.json();
-      console.log(json);
+      console.log(json.weather[0].description);
 
       setWeather({
         city: json.name,
@@ -43,19 +43,27 @@ const WeatherApi = () => {
       */
 
   return (
-    <div className="weather-container">
-      <div className="weather-temp">
-        {loading && <p>Carregando...</p>}
-        {weather.city} {weather.temp.toFixed(1).toString().replace('.', ',')}
-        <sup>C°</sup>
-      </div>
-      <div>
-        <img
-          src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          alt=""
-        />
-      </div>
-    </div>
+    <>
+      {weather && (
+        <div className="weather-container">
+          <div className="weather-temp">
+            {loading && <p>Carregando...</p>}
+            <p>{weather.city} </p>
+            <p>
+              {weather.temp.toFixed(1).toString().replace('.', ',')}
+              <sup>C°</sup>
+            </p>
+          </div>
+          <div className="temp-description">
+            <img
+              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+              alt=""
+            />
+            <p>{weather.description}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

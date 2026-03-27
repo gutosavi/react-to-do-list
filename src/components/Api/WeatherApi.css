@@ -8,8 +8,12 @@
 }
 
 div.weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--fundo-card);
-  width: 100px;
+  width: 110px;
   margin: 10px 0;
   padding-top: 10px;
   border-radius: 8px;
@@ -19,11 +23,29 @@ div.weather-container {
 div.weather-temp{
   background-color: var(--destaque-secundario);
   width: 90px;
+  height: 65px;
   padding: 5px;
   border-radius: 4px;
   box-shadow: var(--box-shadow-principal);
 }
 
+div.weather-temp p {
+  padding: 3px 0;
+}
+
+div.temp-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+div.temp-description p {
+  font-size: 13px;
+}
+
 img {
-  width: 50px;
+  width: 40px;
+  padding-top: 10px;
 }
