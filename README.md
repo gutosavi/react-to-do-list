@@ -1,16 +1,105 @@
-# React + Vite
+# To Do List + Clima em Tempo Real
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto desenvolvido em React que vai além de uma simples lista de tarefas.  
+Aqui você organiza seu dia enquanto acompanha a **temperatura atual baseada na sua localização**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+-> Adicionar tarefas  
+-> Marcar tarefas como concluídas  
+-> Remover tarefas  
+-> Alternar entre modo **Light/Dark**  
+-> Layout responsivo  
+-> Exibição da **temperatura em tempo real** com base na localização do usuário  
+-> Integração com API de clima  
+-> Persistência de dados com LocalStorage (tarefas e tema)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40px"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40px"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40px"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40px"/>
+</p>
+
+---
+
+## Como rodar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+
+# Acesse a pasta
+cd seu-repo
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
+
+```
+
+---
+
+## API utilizada
+
+- OpenWeatherMap (dados de clima em tempo real)
+
+---
+
+## Aprendizados
+
+Durante o desenvolvimento deste projeto, foram trabalhados conceitos importantes como:
+
+- Componentização no React
+- Gerenciamento de estado com `useState`
+- Efeitos colaterais com `useEffect`
+- Consumo de API externa
+- Manipulação de eventos
+- Responsividade e boas práticas de UI
+- Estruturação de projeto front-end
+- Persistência de estado com LocalStorage
+
+---
+
+## Versionamento de código
+
+O projeto foi desenvolvido seguindo boas práticas de versionamento com Git, simulando um fluxo de trabalho profissional:
+
+- Utilização de branches para desenvolvimento isolado de funcionalidades
+- Merge controlado na branch principal (`main`)
+- Commits semânticos para melhor rastreabilidade do código
+- Histórico organizado facilitando manutenção e evolução do projeto
+
+---
+
+## Melhorias futuras
+
+-> Editar tarefas
+-> Filtro (todas / concluídas / pendentes)
+
+---
+
+## Autor
+
+Feito com dedicação por **Gustavo Savi**
+
+🔗 LinkedIn: https://www.linkedin.com/in/gustavo-savi
+🔗 GitHub: https://github.com/gutosavi
+
+---
+
+## ⭐ Se você gostou do projeto
+
+Deixe uma ⭐ no repositório — isso ajuda bastante!
+
+```
+
+```
