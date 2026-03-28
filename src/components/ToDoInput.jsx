@@ -8,7 +8,7 @@ const ToDoInput = ({ text, handleChange, handleSubmit }) => {
           <input
             type="text"
             id="task"
-            placeholder="Write your task here"
+            placeholder="Write your task"
             value={text}
             onChange={handleChange}
           />

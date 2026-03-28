@@ -44,6 +44,7 @@ header {
   height: 250px;
   display: flex;
   flex-flow: column;
+  justify-content: center;
   align-items: flex-end;
   width: 100%;
   padding: 20px;
@@ -52,8 +53,8 @@ header {
 main.container {
   min-height: 100px;
   width: 500px;
-  margin: 150px auto;
-  margin-top: 30px;
+  margin: 0 auto;
+  padding-bottom: 8px;
   background-color: var(--fundo-card);
   border-radius: 8px;
   box-shadow: 
@@ -64,15 +65,17 @@ main.container {
     0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 .input-container{
-  margin-bottom: -48px;
+  position: relative;
 }
+
 .input-container input {
   font-size: 1.2rem;
   border: 1px solid var(--destaque);
   height: 80px;
   width: 85%;
   margin: 20px 0;
-  padding: 0.8rem;
+  padding-right: 90px;
+  padding-left: 0.8rem;
   border-radius: 8px;
   background: var(--destaque-secundario);
   transition: 0.2s;
@@ -91,15 +94,15 @@ input:focus {
   box-shadow: 0 0 5px rgba(0,123,255,0.3);
 }
 
-.input-container .btnSubmit {
+.btnSubmit {
   position: absolute;
-  right: -145px;
+  right: 50px;
   top: 50%;
-  transform: translateY(-167%);
+  transform: translateY(-50%);
   background-color: var(--fundo-buttons-inverso);
   color: var(--texto-inverso);
-  width: 80px;
-  height: 50px;
+  width: 70px;
+  height: 40px;
   margin-left: 15px;
   padding: 11px 0;
   border-radius: 5px;
@@ -109,24 +112,22 @@ input:focus {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out; 
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-button.btnSubmit:hover {
+.btnSubmit:hover {
+  filter: brightness(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-button.btnSubmit:focus-visible {
+btnSubmit:focus-visible {
   outline: 3px solid rgba(0, 123, 255, 0.5); 
   outline-offset: 2px;
 }
 
-.input-container .btnSubmit:active {
-  background-color: #4f4f4f;
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.btnSubmit:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
 }
 
 div.task-box{
@@ -155,12 +156,11 @@ div.todo-list li {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 
-    0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075),
-    0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075),
-    0 16px 16px hsl(0deg 0% 0% / 0.075);
-
+    0 1px 1px hsl(0deg 0% 0% / 0.055),
+    0 2px 2px hsl(0deg 0% 0% / 0.055),
+    0 4px 4px hsl(0deg 0% 0% / 0.055),
+    0 8px 8px hsl(0deg 0% 0% / 0.055),
+    0 16px 16px hsl(0deg 0% 0% / 0.055);
 }
 
 i.checkbox {
@@ -176,4 +176,25 @@ i.trash{
   top: -7%;
   padding: 50px;
   color: var(--trash);
+}
+
+@media (max-width: 600px) {
+
+  header {
+    align-items: center;
+  }
+
+  main.container {
+    width: 300px;
+  }
+
+  .input-container .btnSubmit {
+  right: 30px;
+  }
+
+  i.checkbox {
+  right: 220px;
+  top: 42%;
+}
+
 }

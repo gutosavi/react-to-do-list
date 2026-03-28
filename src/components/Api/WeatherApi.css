@@ -20,10 +20,10 @@ div.weather-container {
   box-shadow: var(--box-shadow-principal)
 }
 
-div.weather-temp{
+div.weather-temp {
   background-color: var(--destaque-secundario);
-  width: 90px;
-  height: 65px;
+  width: 95px;
+  height: 70px;
   padding: 5px;
   border-radius: 4px;
   box-shadow: var(--box-shadow-principal);
@@ -50,4 +50,14 @@ div.temp-description p {
 img {
   width: 40px;
   padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+  div.weather-container{
+    width: 180px;
+    flex-direction: row;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
 }
