@@ -82,8 +82,8 @@ O projeto foi desenvolvido seguindo boas práticas de versionamento com Git, sim
 
 ## Melhorias futuras
 
--> Editar tarefas
--> Filtro (todas / concluídas / pendentes)
+- Editar tarefas
+- Filtro (todas / concluídas / pendentes)
 
 ---
 

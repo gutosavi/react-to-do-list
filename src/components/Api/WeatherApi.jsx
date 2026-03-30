@@ -5,7 +5,7 @@ const WeatherApi = ({ coords }) => {
   const [weather, setWeather] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  const apiKey = '90f8ff726e7c453ceb7cce782a4310ca';
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   React.useEffect(() => {
     if (!coords) return;
