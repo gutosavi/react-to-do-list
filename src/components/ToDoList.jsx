@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDoItem from './ToDoItem';
 
-const ToDoList = ({ tasks, setTasks, setFilter }) => {
+const ToDoList = ({ tasks, setTasks, setFilter, editingId, setEditingId }) => {
   const handleClick = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((item) => {
@@ -37,6 +37,8 @@ const ToDoList = ({ tasks, setTasks, setFilter }) => {
               done={item.done}
               setTasks={setTasks}
               onToggle={handleClick}
+              editingId={editingId}
+              setEditingId={setEditingId}
             />
           ))}
         </ul>

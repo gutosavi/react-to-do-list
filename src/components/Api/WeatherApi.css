@@ -13,7 +13,7 @@ div.weather-container {
   align-items: center;
   flex-direction: column;
   background-color: var(--fundo-card);
-  width: 110px;
+  width: 120px;
   margin: 10px 0;
   padding-top: 10px;
   border-radius: 8px;
@@ -22,8 +22,9 @@ div.weather-container {
 
 div.weather-temp {
   background-color: var(--destaque-secundario);
-  width: 95px;
+  width: 100px;
   height: 70px;
+  margin: 5px;
   padding: 5px;
   border-radius: 4px;
   box-shadow: var(--box-shadow-principal);
@@ -38,6 +39,7 @@ div.temp-description {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 8px;
   flex-direction: column;
   padding-bottom: 10px;
 }
@@ -54,10 +56,12 @@ img {
 
 @media (max-width: 600px) {
   div.weather-container{
-    width: 180px;
+    width: 200px;
     flex-direction: row;
-    gap: 15px;
     padding-bottom: 10px;
   }
 
+  div.weather-temp {
+    margin: 10px;
+  }
 }

@@ -14,6 +14,7 @@ function App() {
   const [text, setText] = React.useState('');
   const [isVisible, setIsVisible] = React.useState(false);
   const [filter, setFilter] = React.useState('All');
+  const [editingId, setEditingId] = React.useState(null);
 
   const taskFiltered = tasks.filter((task) => {
     if (filter === 'completed') return task.done;
@@ -66,6 +67,8 @@ function App() {
             setTasks={setTasks}
             filter={filter}
             setFilter={setFilter}
+            editingId={editingId}
+            setEditingId={setEditingId}
           />
         )}
       </main>
