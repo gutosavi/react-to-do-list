@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import { FaTrashAlt } from 'react-icons/fa';
+import { CiEdit } from 'react-icons/ci';
 
 const ToDoItem = ({
   id,
@@ -26,16 +27,24 @@ const ToDoItem = ({
 
   return (
     <>
-      {editingId === id ? (
-        <input value={editText} onChange={(e) => setEditText(e.target.value)} />
-      ) : (
-        ''
-      )}
-      {editingId === id && <button onClick={handleSave}>Salvar</button>}
       <li onClick={() => onToggle(id)}>
-        <span style={{ textDecoration: done ? 'line-through' : 'none' }}>
-          {text}
-        </span>
+        {editingId === id ? (
+          <input
+            id="edit-input"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
+        ) : (
+          <span style={{ textDecoration: done ? 'line-through' : 'none' }}>
+            {text}
+          </span>
+        )}
+        {editingId === id && (
+          <button className="btn-SaveEdit" onClick={handleSave}>
+            Salvar
+          </button>
+        )}
+
         <i className="checkbox">
           {done ? (
             <ImCheckboxChecked style={{ color: done ? '#4285F4' : '#ccc' }} />
@@ -43,7 +52,9 @@ const ToDoItem = ({
             <ImCheckboxUnchecked />
           )}
         </i>
-        <i onClick={() => setEditingId(id)}>Editar</i>
+        <i className="edit-icon">
+          {<CiEdit onClick={() => setEditingId(id)} />}
+        </i>
         <i className="trash">
           {<FaTrashAlt onClick={() => handleClickDelete(id)} />}
         </i>

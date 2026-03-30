@@ -7,6 +7,7 @@
   --destaque: #ccc;
   --destaque-secundario: #eee;
   --trash: rgb(220, 76, 100);
+  --edit-icon: rgba(84, 180, 211, 1);
   --transition-speed: 0.3s;
 }
 
@@ -30,6 +31,7 @@ body.dark{
   --destaque: #444444;
   --destaque-secundario: #202124;
   --trash: #eee;
+  --edit-icon: #ccc;
 }
 
 div#root{
@@ -172,10 +174,19 @@ i.checkbox {
 
 i.trash{
   position: absolute;
-  right: -26px;
-  top: -7%;
-  padding: 50px;
+  right: 15px;
+  top: 43%;
+ 
   color: var(--trash);
+}
+
+i.edit-icon{
+  position: absolute;
+  right: 42px;
+  top: 43%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--edit-icon);
 }
 
 .filter-container {
