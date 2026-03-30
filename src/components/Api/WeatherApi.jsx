@@ -53,7 +53,7 @@ const WeatherApi = ({ coords }) => {
         </div>
         <div className="temp-description">
           <img
-            src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
             alt=""
           />
           <p>{weather.description}</p>

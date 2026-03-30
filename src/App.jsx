@@ -2,9 +2,7 @@ import React from 'react';
 import './App.css';
 import ToDoList from './components/ToDoList';
 import ToDoInput from './components/ToDoInput';
-import ThemeToggleButton from './components/Theme/ThemeToggleButton';
-import WeatherApi from './components/Api/WeatherApi';
-import UserLocation from './components/UserLocation';
+import Header from './components/Header/Header';
 
 function App() {
   const [coords, setCoords] = React.useState(null);
@@ -51,9 +49,7 @@ function App() {
   return (
     <>
       <header>
-        <ThemeToggleButton />
-        <UserLocation onLocation={setCoords} />
-        <WeatherApi coords={coords} />
+        <Header coords={coords} setCoords={setCoords} />
       </header>
       <main className="container">
         <ToDoInput
