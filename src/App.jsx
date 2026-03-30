@@ -5,6 +5,7 @@ import ToDoInput from './components/ToDoInput';
 import ThemeToggleButton from './components/Theme/ThemeToggleButton';
 import WeatherApi from './components/Api/WeatherApi';
 import UserLocation from './components/UserLocation';
+import FilterTask from './components/FilterTask';
 
 function App() {
   const [coords, setCoords] = React.useState(null);
@@ -13,6 +14,13 @@ function App() {
   );
   const [text, setText] = React.useState('');
   const [isVisible, setIsVisible] = React.useState(false);
+  const [filter, setFilter] = React.useState('All');
+
+  const taskFiltered = tasks.filter((task) => {
+    if (filter === 'completed') return task.done;
+    if (filter === 'pending') return !task.done;
+    return true;
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,7 +61,14 @@ function App() {
           handleSubmit={handleSubmit}
           handleChange={handleChange}
         />
-        {isVisible && <ToDoList tasks={tasks} setTasks={setTasks} />}
+        {isVisible && (
+          <ToDoList
+            tasks={taskFiltered}
+            setTasks={setTasks}
+            filter={filter}
+            setFilter={setFilter}
+          />
+        )}
       </main>
     </>
   );

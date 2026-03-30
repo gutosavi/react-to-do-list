@@ -1,7 +1,7 @@
 import React from 'react';
 import ToDoItem from './ToDoItem';
 
-const ToDoList = ({ tasks, setTasks }) => {
+const ToDoList = ({ tasks, setTasks, setFilter }) => {
   const handleClick = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((item) => {
@@ -13,6 +13,19 @@ const ToDoList = ({ tasks, setTasks }) => {
 
   return (
     <div className="todo-list">
+      <div className="filter-container">
+        <label htmlFor="filter">Filter:</label>
+        <select
+          name="filter"
+          id="filter"
+          onChange={({ target }) => setFilter(target.value)}
+        >
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+
       <ul>
         {tasks.map((item) => (
           <ToDoItem
