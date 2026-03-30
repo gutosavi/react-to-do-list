@@ -201,6 +201,42 @@ i.edit-icon{
   font-size: 0.800rem;
 }
 
+.btn-SaveEdit {
+  background-color: var(--fundo-buttons-inverso);
+  color: var(--texto-inverso);
+  width: 50px;
+  height: 30px;
+  margin-left: 15px;
+  padding: 11px 0;
+  border-radius: 5px;
+  font-size: .575rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.btn-SaveEdit:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+#edit-input{
+  font-size: 1.2rem;
+  height: 50px;
+  width: 65%;
+  margin: 20px 0;
+  padding-right: 90px;
+  padding-left: 0.8rem;
+  border-radius: 8px;
+  background: var(--destaque-secundario);
+  border: 1px solid var(--destaque);
+  outline: none;
+  font-size: 14px;
+}
+
 select, option {
   color: var(--texto);
   width: 100px;

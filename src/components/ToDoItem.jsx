@@ -41,7 +41,7 @@ const ToDoItem = ({
         )}
         {editingId === id && (
           <button className="btn-SaveEdit" onClick={handleSave}>
-            Salvar
+            Save
           </button>
         )}
 
