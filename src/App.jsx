@@ -5,7 +5,6 @@ import ToDoInput from './components/ToDoInput';
 import ThemeToggleButton from './components/Theme/ThemeToggleButton';
 import WeatherApi from './components/Api/WeatherApi';
 import UserLocation from './components/UserLocation';
-import FilterTask from './components/FilterTask';
 
 function App() {
   const [coords, setCoords] = React.useState(null);

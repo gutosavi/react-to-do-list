@@ -178,6 +178,28 @@ i.trash{
   color: var(--trash);
 }
 
+.filter-container {
+  width: 92%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.filter-container label {
+  color: var(--texto);
+  font-size: 0.800rem;
+}
+
+select, option {
+  color: var(--texto);
+  width: 100px;
+  height: 30px;
+  border: 1px solid var(--destaque);
+  background-color: var(--fundo-card);
+  outline: none;
+  border-radius: 4px;
+}
+
 @media (max-width: 600px) {
 
   header {
@@ -196,5 +218,4 @@ i.trash{
   right: 220px;
   top: 42%;
 }
-
 }

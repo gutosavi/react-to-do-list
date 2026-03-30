@@ -12,33 +12,36 @@ const ToDoList = ({ tasks, setTasks, setFilter }) => {
   };
 
   return (
-    <div className="todo-list">
+    <>
       <div className="filter-container">
-        <label htmlFor="filter">Filter:</label>
-        <select
-          name="filter"
-          id="filter"
-          onChange={({ target }) => setFilter(target.value)}
-        >
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="pending">Pending</option>
-        </select>
+        <div>
+          <label htmlFor="filter">Filter: </label>
+          <select
+            name="filter"
+            id="filter"
+            onChange={({ target }) => setFilter(target.value)}
+          >
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
       </div>
-
-      <ul>
-        {tasks.map((item) => (
-          <ToDoItem
-            key={item.id}
-            id={item.id}
-            text={item.text}
-            done={item.done}
-            setTasks={setTasks}
-            onToggle={handleClick}
-          />
-        ))}
-      </ul>
-    </div>
+      <div className="todo-list">
+        <ul>
+          {tasks.map((item) => (
+            <ToDoItem
+              key={item.id}
+              id={item.id}
+              text={item.text}
+              done={item.done}
+              setTasks={setTasks}
+              onToggle={handleClick}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
