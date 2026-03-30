@@ -8,8 +8,10 @@ Aqui você organiza seu dia enquanto acompanha a **temperatura atual baseada na 
 ## Funcionalidades
 
 -> Adicionar tarefas  
+-> Editar tarefas
 -> Marcar tarefas como concluídas  
 -> Remover tarefas  
+-> Filtro de tarefas (todas / concluídas / pendentes)
 -> Alternar entre modo **Light/Dark**  
 -> Layout responsivo  
 -> Exibição da **temperatura em tempo real** com base na localização do usuário  
@@ -66,6 +68,8 @@ Durante o desenvolvimento deste projeto, foram trabalhados conceitos importantes
 - Responsividade e boas práticas de UI
 - Estruturação de projeto front-end
 - Persistência de estado com LocalStorage
+- Manipulação e atualização de listas com `map`
+- Controle de estado para edição de itens
 
 ---
 
@@ -82,8 +86,9 @@ O projeto foi desenvolvido seguindo boas práticas de versionamento com Git, sim
 
 ## Melhorias futuras
 
-- Editar tarefas
-- Filtro (todas / concluídas / pendentes)
+- Busca de clima por cidade (fallback caso a localização seja negada)
+- Melhorias visuais e animações
+- Notificações ou alertas para tarefas
 
 ---
 
@@ -99,7 +104,3 @@ Feito com dedicação por **Gustavo Savi**
 ## ⭐ Se você gostou do projeto
 
 Deixe uma ⭐ no repositório — isso ajuda bastante!
-
-```
-
-```
