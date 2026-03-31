@@ -232,7 +232,7 @@ i.edit-icon{
   height: 50px;
   width: 85%;
   margin: 20px 0;
-  padding-right: 90px;
+  padding-right: 65px;
   padding-left: 0.8rem;
   border-radius: 8px;
   background: var(--destaque-secundario);
@@ -268,5 +268,14 @@ select, option {
   i.checkbox {
   right: 220px;
   top: 42%;
-}
+  }
+
+  #edit-input{
+    padding-right: 40px;
+  }
+
+  .btn-SaveEdit{
+    right: 80px;
+    width: 30px;
+  }
 }
