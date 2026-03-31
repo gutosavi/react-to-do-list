@@ -202,6 +202,9 @@ i.edit-icon{
 }
 
 .btn-SaveEdit {
+  position: absolute;
+  right: 110px;
+  top: 35%;
   background-color: var(--fundo-buttons-inverso);
   color: var(--texto-inverso);
   width: 50px;
@@ -224,9 +227,10 @@ i.edit-icon{
 }
 
 #edit-input{
+  position: relative;
   font-size: 1.2rem;
   height: 50px;
-  width: 65%;
+  width: 85%;
   margin: 20px 0;
   padding-right: 90px;
   padding-left: 0.8rem;
