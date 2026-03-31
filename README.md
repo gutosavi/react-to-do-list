@@ -5,6 +5,14 @@ Aqui você organiza seu dia enquanto acompanha a **temperatura atual baseada na 
 
 ---
 
+## 📸 Preview
+
+<p align="center">
+  <img src="./src/assets/img/todolist-animation.gif" alt="Preview do projeto" />
+</p>
+
+---
+
 ## Funcionalidades
 
 -> Adicionar tarefas  
